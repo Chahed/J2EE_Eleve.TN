@@ -17,7 +17,7 @@ import com.chahed.spring.model.*;
 @Controller
 public class LoginController {
 	
-	@RequestMapping(value = { "/home" })
+	@RequestMapping(value = { "/" })
 	public String welcomePage(Authentication authentication){
 		if(authentication.isAuthenticated()){
 			Object o = authentication.getPrincipal();
@@ -52,11 +52,15 @@ public class LoginController {
 	}
 
 
-	@RequestMapping("/user**")
+	@RequestMapping("/user")
 	public String getUserProfile() {
 		return "user";}
 	
-	@RequestMapping("/")
+	@RequestMapping("/admin")
+	public String admin() {
+		return "accueil";}
+	
+	@RequestMapping("/home")
 	public String accueil() {
 			return "index";}
 		
