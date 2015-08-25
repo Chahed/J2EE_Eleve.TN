@@ -48,7 +48,7 @@ public class LoginController {
 		} else if (logout != null) {
 			message = "Logout successful !";
 		}
-		return new ModelAndView("login", "message", message);
+		return new ModelAndView("connexion", "message", message);
 	}
 
 
