@@ -38,7 +38,7 @@ public class EnseignantController {
         this.classeService = ps;
     }
     
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String Acceuil(Model model) {
     
         return "index";
