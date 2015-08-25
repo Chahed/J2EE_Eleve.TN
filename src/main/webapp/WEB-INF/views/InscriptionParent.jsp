@@ -26,11 +26,7 @@
        <p >
         <input name="tel" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"  id="telephone" placeholder="Téléphone"   >
       </p>
-      
-      <p >
-        <input name="specialite" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"  id="specialite" placeholder="Spécialité"   >
-      </p>
-      <p >
+
      
         <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
       </p>

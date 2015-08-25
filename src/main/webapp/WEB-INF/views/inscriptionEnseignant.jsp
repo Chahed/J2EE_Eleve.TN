@@ -13,8 +13,8 @@
 
 <div id="form-main">
   <div id="form-div">
-  <c:url  var="addAction" value="/parent/ajout" ></c:url>
-    <form:form class="form" id="form1" action="${addAction}" commandName="inscriptionParent">
+  <c:url  var="addAction" value="/enseignant/ajout" ></c:url>
+    <form:form class="form" id="form1" action="${addAction}" commandName="inscriptionEnseignant">
       
       <p >
         <input name="nom" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" id="name" placeholder="Nom"   />
