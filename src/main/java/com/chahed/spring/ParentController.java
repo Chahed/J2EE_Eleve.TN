@@ -58,10 +58,16 @@ public class ParentController {
         model.addAttribute("listparent", this.parentService.listParent());
         return "parent";
     }
+    
+    @RequestMapping(value = "/inscParent", method = RequestMethod.GET)
+    public String inscParent(Model model) {
+    
+        return "inscriptionParent";
+    }
     @RequestMapping(value= "/parent/ajout", method = RequestMethod.POST)
     public String submitForm(@ModelAttribute("Parent") Parent e, BindingResult result) {
         if(result.hasErrors()) {
-            return "redirect:/accueil";
+            return "redirect:/inscParent";
         }
         String nom = e.getNom();
         String mdp = e.getMotdepasse();
@@ -70,7 +76,7 @@ public class ParentController {
         this.parentService.addParent(e);
         this.userService.addUser(u);
         this.userRoleService.addUserRole(r);
-        return "redirect:/parent";
+        return "redirect:/home";
     }
     
     

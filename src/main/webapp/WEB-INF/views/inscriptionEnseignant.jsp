@@ -28,7 +28,7 @@
       </p>
       
       <p >
-        <input name="specialite" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"  id="specialite" placeholder="Spécialité"   >
+        <input name="specialite" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"  id="name" placeholder="Spécialité"   >
       </p>
       <p >
      

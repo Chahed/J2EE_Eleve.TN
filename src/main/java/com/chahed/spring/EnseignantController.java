@@ -44,11 +44,7 @@ public class EnseignantController {
         return "index";
     }
     
-    @RequestMapping(value = "/inscParent", method = RequestMethod.GET)
-    public String inscParent(Model model) {
-    
-        return "inscriptionParent";
-    }
+   
     @RequestMapping(value = "/inscEnseignant", method = RequestMethod.GET)
     public String inscEnseignant(Model model) {
     
@@ -78,7 +74,7 @@ public class EnseignantController {
             this.enseignantService.updateEnseignant(e);
         }
          
-        return "redirect:/enseignants";
+        return "redirect:/home";
          
     }
      
