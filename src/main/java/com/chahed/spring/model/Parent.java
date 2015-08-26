@@ -12,9 +12,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import org.springmodules.validation.bean.conf.loader.annotation.handler.Email;
-import org.springmodules.validation.bean.conf.loader.annotation.handler.NotEmpty;
-import org.springmodules.validation.bean.conf.loader.annotation.handler.Size;
 
 import com.sun.istack.internal.NotNull;
 
@@ -27,17 +24,13 @@ import com.sun.istack.internal.NotNull;
 		@Column(name="id_parent")
 		@GeneratedValue(strategy=GenerationType.AUTO)	
 	    private int id;
-		@NotEmpty(message = "Please enter your name")
-	    @Size(min = 1, max = 12)
+		
 	    private String nom;
-		@NotEmpty
-	    @Size(min = 1, max = 12 , message = "Your lastname must between 1 and 12 characters")
 	    private String prenom;
-		  @NotEmpty(message = "Please enter your email addresss.") @Email
-		  @Size(min = 3, max = 10 , message = "Your password must between 3 and 10 characters")
+
+		  
 	    private String email;
-	    @NotEmpty
-	    @Column(name = "login", unique=true, nullable = false)
+	    
 	    private String login;
 	    private String motdepasse;
 	    private int tel;
