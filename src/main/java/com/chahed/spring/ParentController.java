@@ -59,10 +59,10 @@ public class ParentController {
         return "parent";
     }
     
-    @RequestMapping(value = "/inscParent", method = RequestMethod.GET)
+    @RequestMapping(value = "/inscP", method = RequestMethod.GET)
     public String inscParent(Model model) {
     
-        return "inscriptionEnseignant";
+        return "inscparent";
     }
     @RequestMapping(value= "/parent/ajout", method = RequestMethod.POST)
     public String submitForm(@ModelAttribute("Parent") Parent e, BindingResult result) {

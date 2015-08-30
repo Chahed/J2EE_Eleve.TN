@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "users", catalog = "spring")
+@Table(name = "users", catalog="test")
 public class Users {
 
 	@Id

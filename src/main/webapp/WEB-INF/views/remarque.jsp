@@ -7,18 +7,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>choisir une classe</title>
+<%@ include file="/include/js.jsp" %>
+
 </head>
 <body>
-<h3>Choisir la classe : </h3>
-<ul>
+<%@ include file="/include/header.jsp" %>
+
+
+
+
+<h3>Veuillez Choisir la classe : </h3>
+<ul class="list">
+<li> <a href="#">Listes des classes</a>
+ <ul class="item2">
    <c:forEach items="${classes}" var="classe">
         
            <li><a href="http://localhost:8080/spring/remarque/${classe.id}"> ${classe.nomclasse}</a></li>
-            
-            
+             </c:forEach></ul>
+ 
+  </li>   
+  </ul>       
      
-        
-    </c:forEach></ul>
-
 </body>
 </html>

@@ -46,7 +46,7 @@
         <a href="#" data-toggle="dropdown" class="dropdown-toggle">S'inscrire <b class="caret"></b></a>
         <ul class="dropdown-menu" class="item">
             <li><a href="/spring/inscEnseignant">Enseignant</a></li>
-            <li><a href="/spring/inscParent">Parent</a></li>
+            <li><a href="/spring/inscP">Parent</a></li>
         </ul>
     </li>
 		<li><a href="/spring/login">Se connecter</a></li>

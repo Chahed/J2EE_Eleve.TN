@@ -1,5 +1,7 @@
 package com.chahed.spring;
  
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -37,12 +39,12 @@ public class EnseignantController {
     public void setClasseService(ClasseService ps){
         this.classeService = ps;
     }
-    
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String Acceuil(Model model) {
     
         return "index";
     }
+
     
    
     @RequestMapping(value = "/inscEnseignant", method = RequestMethod.GET)

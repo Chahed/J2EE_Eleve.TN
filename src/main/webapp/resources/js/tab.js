@@ -1,0 +1,3 @@
+$(function() {
+  $("#restable").tablesorter();
+});
