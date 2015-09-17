@@ -7,8 +7,11 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -37,11 +40,11 @@ public class LoginController {
 	}
 
 
-	@RequestMapping("/login")
+	@RequestMapping(value="/login")
 	public ModelAndView getLoginForm(@ModelAttribute Users users,
 			@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout) {
-
+        
 		String message = "";
 		if (error != null) {
 			message = "Incorrect username or password !";
@@ -56,9 +59,11 @@ public class LoginController {
 	public String getUserProfile() {
 		return "user";}
 	
-	@RequestMapping("/admin")
-	public String admin() {
-		return "accueil";}
+	@RequestMapping(value="/admin", method = RequestMethod.GET)
+	public String admin(Model model, @ModelAttribute Users users) {
+		
+		model.addAttribute("name", users);
+		return "home";}
 	
 	@RequestMapping("/home")
 	public String accueil() {
