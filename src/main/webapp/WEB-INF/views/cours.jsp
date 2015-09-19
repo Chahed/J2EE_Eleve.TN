@@ -67,7 +67,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="<%= request.getContextPath() %>/resources/dist/img/user.jpg" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs"> </span>
                 </a>
                 <ul class="dropdown-menu">
                   
@@ -101,7 +101,7 @@
               <img src="<%= request.getContextPath() %>/resources/dist/img/user.jpg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
+              <p> </p>
 
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -144,10 +144,13 @@
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
+ <section class="content-header">
 <h1>
   Ajouter Un Cours
-</h1>
- 
+</h1></section>
+ </br>
+  <div class="box box-info">
+      <div class="box-header">
 <c:url var="addAction" value="/cours/ajout" ></c:url>
  
 <form:form action="${addAction}" commandName="cours">
@@ -160,7 +163,7 @@
             </form:label>
         </td>
         <td>
-            <form:input path="id" readonly="true" size="8"  disabled="true" />
+            <form:input path="id" readonly="true" size="8"  disabled="true" class="form-control" />
             <form:hidden path="id" />
         </td> 
     </tr>
@@ -172,26 +175,29 @@
             </form:label>
         </td>
         <td>
-            <form:input path="libelle" />
+            <form:input path="libelle" class="form-control" />
         </td> 
     </tr>
   
     <tr>
         <td colspan="2">
             <c:if test="${!empty cours.libelle}">
-                <input type="submit"
+                <input type="submit" class="btn btn-default pull-right"
                     value="<spring:message text="Modifier"/>" />
             </c:if>
             <c:if test="${empty cours.libelle}">
-                <input type="submit"
+                <input type="submit" class="btn btn-default pull-right"
                     value="<spring:message text="Ajouter"/>" />
             </c:if>
         </td>
     </tr>
 </table>  
-</form:form>
-<br>
-<h3>La Liste des Cours: </h3>
+</form:form></div></div>
+<section class="content-header">
+<h1>La Liste des Cours </h1></section>
+</br>
+<div class="box box-success">
+                <div class="box-header">
 <c:if test="${!empty listCours}">
     <table class="tg">
     <tr>
@@ -212,7 +218,7 @@
     </c:forEach>
     </table>
 </c:if>
-</div>
+</div></div></div>
       
       <!-- Control Sidebar -->      
       <aside class="control-sidebar control-sidebar-dark">                

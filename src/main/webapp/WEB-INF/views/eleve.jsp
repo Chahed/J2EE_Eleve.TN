@@ -67,7 +67,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="<%= request.getContextPath() %>/resources/dist/img/user.jpg" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs"> </span>
                 </a>
                 <ul class="dropdown-menu">
                   
@@ -101,7 +101,7 @@
               <img src="<%= request.getContextPath() %>/resources/dist/img/user.jpg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
+              <p> </p>
 
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -144,8 +144,12 @@
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-<h3>Choisir la classe : </h3>
-<ul>
+ <section class="content-header">
+<h1>Choisir la classe</h1></section>
+</br>
+<div class="box box-success">
+                <div class="box-header">
+<ul class="todo-list">
    <c:forEach items="${classes}" var="classe">
         
            <li><a href="http://localhost:8080/spring/eleve/${classe.id}"> ${classe.nomclasse}</a></li>
@@ -153,16 +157,22 @@
             
      
         
-    </c:forEach></ul>
- <h3>Ajouter une classe</h3>
+    </c:forEach></ul></div></div>
+   <section class="content-header">
+ <h1>Ajouter une classe</h1>
+ </section>
+ </br>
+  <div class="box box-info">
+      <div class="box-header">
+ 
     <form:form action="http://localhost:8080/spring/eleve/ajout" method="post">
 <table>
     <tr>
-      <td><input type="text"Name="a"  ></td>
-      <td><input type="submit" Value="Ajouter" ></td>
+      <td><input type="text"Name="a" class="form-control" ></td>
+      <td><input type="submit" Value="Ajouter" class="btn btn-default pull-right" ></td>
     </tr>
      </table></form:form>
-</div>
+</div></div></div>
       
       <!-- Control Sidebar -->      
       <aside class="control-sidebar control-sidebar-dark">                

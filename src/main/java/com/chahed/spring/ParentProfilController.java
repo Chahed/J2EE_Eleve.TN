@@ -46,7 +46,7 @@ public class ParentProfilController {
 	
 	@RequestMapping("/parentprofil/{idc}/{idp}")
 	public String listFollows(ModelMap model,@PathVariable("idp")int parentId,@PathVariable("idc")int classeId ){
-		model.addAttribute("listprofil", parentService.listProfil(parentId));
+		//model.addAttribute("listprofil", parentService.listGives(parentId));
 		Parent parent= parentService.getParentById(parentId);
 		model.addAttribute("parent",parent);
 		model.addAttribute("offeredProfil",profilService.ListProfilbyClasse(classeId));
@@ -56,8 +56,7 @@ public class ParentProfilController {
 	
 	@RequestMapping(value = "parentprofil/addParentProfil", method = RequestMethod.POST)
     public String addParentProfil() {
-		
-		parentService.addProfiltoParent(16,23);
+		parentService.addProfilToParent(16,23);
         return "redirect:/parent/";
 		
     }

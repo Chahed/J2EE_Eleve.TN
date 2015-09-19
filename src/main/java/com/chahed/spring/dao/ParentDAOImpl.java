@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.chahed.spring.model.Cours;
 import com.chahed.spring.model.Enseignant;
 import com.chahed.spring.model.Parent;
 import com.chahed.spring.model.Profil;
@@ -74,12 +75,13 @@ public class ParentDAOImpl implements ParentDAO {
 	}
 
 
+
+	
 	@Override
-	@Transactional
-	public List<Profil> getProfils(int id) {
+	public List<Profil> getGives(int id) {
 		Session session =  sessionFactory.getCurrentSession();
 		Parent e = (Parent)session.load(Parent.class,id);
-		return e.getListProfil();
+		return e.getGives();
 	}
 
 }

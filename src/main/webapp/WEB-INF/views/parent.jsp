@@ -67,7 +67,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="<%= request.getContextPath() %>/resources/dist/img/user.jpg" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs"> </span>
                 </a>
                 <ul class="dropdown-menu">
                   
@@ -101,7 +101,7 @@
               <img src="<%= request.getContextPath() %>/resources/dist/img/user.jpg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
+              <p> </p>
 
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -144,7 +144,10 @@
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-<h2>Ajouter Parent</h2>
+  <section class="content-header">
+<h1>Ajouter Parent</h1>
+</section>
+</br>
 <style type="text/css">
         .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
         .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
@@ -153,7 +156,8 @@
         .error {
         color: #ff0000; }
     </style>
- 
+ <div class="box box-info">
+      <div class="box-header">
 <c:url var="addAction" value="/parent/ajout" ></c:url>
  
 <form:form action="${addAction}" commandName="parent">
@@ -165,7 +169,7 @@
             </form:label>
         </td>
         <td>
-            <form:input path="id" readonly="true" size="8"  disabled="true" />
+            <form:input path="id" readonly="true" size="8"  disabled="true" class="form-control"/>
             <form:hidden path="id" />
       
       
@@ -179,7 +183,7 @@
             </form:label>
         </td>
         <td>
-            <form:input path="nom" />
+            <form:input path="nom" class="form-control"/>
         </td> 
          <td><form:errors path="nom" cssclass="error"/></td>
     </tr>
@@ -190,7 +194,7 @@
             </form:label>
         </td>
         <td>
-            <form:input path="prenom" />
+            <form:input path="prenom" class="form-control" />
         </td>
          <td><form:errors path="prenom" cssclass="error"  text="erooor"/></td>
     </tr>
@@ -201,7 +205,7 @@
             </form:label>
         </td>
         <td>
-            <form:input path="email" />
+            <form:input path="email" class="form-control" />
         </td> 
     </tr>
            
@@ -213,7 +217,7 @@
             </form:label>
         </td>
         <td>
-            <form:input path="login" />
+            <form:input path="login" class="form-control"/>
         </td> 
          <td><form:errors path="login" cssclass="error"/></td>
     </tr>
@@ -225,7 +229,7 @@
             </form:label>
         </td>
         <td>
-            <form:input path="motdepasse" />
+            <form:input path="motdepasse" class="form-control" />
         </td> 
     </tr>
             <tr>
@@ -235,24 +239,27 @@
             </form:label>
         </td>
         <td>
-            <form:input path="tel" />
+            <form:input path="tel" class="form-control"/>
         </td> 
     </tr>
     
     <td colspan="2">
             <c:if test="${!empty parent.nom}">
-                <input type="submit"
+                <input type="submit" class="btn btn-default pull-right"
                     value="<spring:message text="Modifier"/>" />
             </c:if>
             <c:if test="${empty parent.nom}">
-                <input type="submit"
+                <input type="submit" class="btn btn-default pull-right"
                     value="<spring:message text="Ajouter"/>" />
             </c:if>
         </td>
 </table>
-</form:form>
- 
-<h3>Liste des parents</h3>
+</form:form></div></div>
+ <section class="content-header">
+<h1>La Liste des parents</h1></section>
+</br>
+<div class="box box-success">
+                <div class="box-header">
 <c:if  test="${!empty listparent}">
 <table class="tg">
 <tr>
@@ -285,7 +292,7 @@
 </c:forEach>
 </table>
 </c:if>
-</div>
+</div></div></div>
       
       <!-- Control Sidebar -->      
       <aside class="control-sidebar control-sidebar-dark">                

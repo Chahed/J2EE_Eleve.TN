@@ -39,15 +39,18 @@ import com.sun.istack.internal.NotNull;
 		@JoinTable(name="parent-profil"
 			,joinColumns=@JoinColumn(name="id_parent")
 			,inverseJoinColumns=@JoinColumn(name="id_profil"))
-		 private List<Profil> ListProfil ;
+		 private List<Profil> gives ;
 	  
+	
+	    
 		
-		public List<Profil> getListProfil() {
-			return ListProfil;
+
+		public List<Profil> getGives() {
+			return gives;
 		}
 
-		public void setListProfil(List<Profil> listProfil) {
-			ListProfil = listProfil;
+		public void setGives(List<Profil> gives) {
+			this.gives = gives;
 		}
 
 		public Parent() {

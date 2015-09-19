@@ -67,7 +67,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="<%= request.getContextPath() %>/resources/dist/img/user.jpg" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs"> </span>
                 </a>
                 <ul class="dropdown-menu">
                   
@@ -101,7 +101,7 @@
               <img src="<%= request.getContextPath() %>/resources/dist/img/user.jpg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
+              <p> </p>
 
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -144,32 +144,47 @@
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-      <h2>Ajouter un enseignant</h2>
+      <section class="content-header">
+      <h1>Ajouter un enseignant</h1>
+      </section>
+      <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+        .tg .tg-4eph{background-color:#f9f9f9}
+        .error {
+        color: #ff0000; }
+    </style>
+      </br>
+      <div class="box box-info">
+      <div class="box-header">
+     
+      
 
 <c:url var="addAction" value="/enseignant/ajout" ></c:url>
 
-<form:form action="${addAction}" commandName="enseignant">
+<form:form action="${addAction}" commandName="enseignant" >
     <table>
     <tr>
         <td>
-            <form:label path="id">
+            <form:label path="id" >
                 <spring:message text="ID"/>
             </form:label>
         </td>
         <td>
-            <form:input path="id" readonly="true" size="8"  disabled="true" />
+            <form:input path="id" readonly="true" size="8"  disabled="true" class="form-control"/>
             <form:hidden path="id" />
         </td>
     </tr>
 
     <tr>
         <td>
-            <form:label path="nom">
+            <form:label path="nom" >
                 <spring:message text="Nom"/>
             </form:label>
         </td>
         <td>
-            <form:input path="nom" />
+            <form:input path="nom" class="form-control" />
         </td>
     </tr>
     <tr>
@@ -179,7 +194,7 @@
             </form:label>
         </td>
         <td>
-            <form:input path="prenom" />
+            <form:input path="prenom" class="form-control" />
         </td>
     </tr>
             <tr>
@@ -189,7 +204,7 @@
             </form:label>
         </td>
         <td>
-            <form:input path="email" />
+            <form:input path="email" class="form-control" />
         </td>
     </tr>
 
@@ -200,7 +215,7 @@
             </form:label>
         </td>
         <td>
-            <form:input path="login" />
+            <form:input path="login" class="form-control" />
         </td>
     </tr>
 
@@ -211,7 +226,7 @@
             </form:label>
         </td>
         <td>
-            <form:input path="motdepasse" />
+            <form:input path="motdepasse" class="form-control"/>
         </td>
     </tr>
             <tr>
@@ -221,7 +236,7 @@
             </form:label>
         </td>
         <td>
-            <form:input path="tel" />
+            <form:input path="tel" class="form-control"/>
         </td>
     </tr>
 
@@ -232,27 +247,32 @@
             </form:label>
         </td>
         <td>
-            <form:input path="specialite" />
+            <form:input path="specialite" class="form-control" />
         </td>
     </tr>
+    
     <td colspan="2">
             <c:if test="${!empty enseignant.nom}">
-                <input type="submit"
+                <input type="submit"  class="btn btn-default pull-right"
                     value="<spring:message text="Modifier"/>" />
             </c:if>
             <c:if test="${empty enseignant.nom}">
-                <input type="submit"
+                <input type="submit"  class="btn btn-default pull-right"
                     value="<spring:message text="Ajouter"/>" />
             </c:if>
         </td>
 </table>
 </form:form>
-
-<h3>La liste des enseignants</h3>
+</div></div>
+<section class="content-header">
+<h1>La liste des enseignants</h1></section>
+</br>
+<div class="box box-success">
+                <div class="box-header">
 <c:if  test="${!empty listenseignant}">
-<table>
+<table class="tg" >
 <tr>
-       <th width="80">Id</th>
+       
         <th width="120">Nom</th>
         <th width="120">Prenom</th>
         <th width="120">Email</th>
@@ -261,8 +281,8 @@
            <th width="120">Telephone</th>
         <th width="120">Specialite</th>
 
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
+    <th width="120">&nbsp;</th>
+    <th width="120">&nbsp;</th>
 </tr>
 <c:forEach items="${listenseignant}" var="enseignant">
     <tr>
@@ -280,6 +300,8 @@
 </c:forEach>
 </table>
 </c:if>
+</div>
+</div>
 </div>
       
       <!-- Control Sidebar -->      

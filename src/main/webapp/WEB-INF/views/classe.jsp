@@ -67,7 +67,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="<%= request.getContextPath() %>/resources/dist/img/user.jpg" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs"> </span>
                 </a>
                 <ul class="dropdown-menu">
                   
@@ -101,7 +101,7 @@
               <img src="<%= request.getContextPath() %>/resources/dist/img/user.jpg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
+              <p> </p>
 
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -144,9 +144,22 @@
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
+      <section class="content-header">
 <h1>
-  Ajouter Un Eleve à cette classe : 
-</h1>
+  Ajouter Un Eleve à cette classe 
+</h1></section>
+
+<style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+        .tg .tg-4eph{background-color:#f9f9f9}
+        .error {
+        color: #ff0000; }
+    </style>
+    </br>
+ <div class="box box-info">
+      <div class="box-header">
  
 <c:url var="addAction" value="http://localhost:8080/spring/eleve/${id1}/ajout" ></c:url>
  
@@ -160,7 +173,7 @@
             </form:label>
         </td>
         <td>
-            <form:input path="id" readonly="true" size="8"  disabled="true" />
+            <form:input path="id" readonly="true" size="8"  disabled="true" class="form-control" />
             <form:hidden path="id" />
         </td> 
     </tr>
@@ -172,7 +185,7 @@
             </form:label>
         </td>
         <td>
-            <form:input path="nom" />
+            <form:input path="nom" class="form-control"/>
         </td> 
     </tr>
     <tr>
@@ -182,7 +195,7 @@
             </form:label>
         </td>
         <td>
-            <form:input path="prenom" />
+            <form:input path="prenom" class="form-control"/>
         </td>
     </tr>
             <tr>
@@ -192,26 +205,29 @@
             </form:label>
         </td>
         <td>
-            <form:input path="dateNaissance" />
+            <form:input path="dateNaissance" class="form-control" />
         </td> 
     </tr>
   
     <tr>
         <td colspan="2">
             <c:if test="${!empty eleve.nom}">
-                <input type="submit"
+                <input type="submit" class="btn btn-default pull-right"
                     value="<spring:message text="Modifier"/>" />
             </c:if>
             <c:if test="${empty eleve.nom}">
-                <input type="submit"
+                <input type="submit" class="btn btn-default pull-right"
                     value="<spring:message text="Ajouter"/>" />
             </c:if>
         </td>
     </tr>
 </table>  
-</form:form>
-<br>
-<h3>La liste des eleves dans cette classe (${id1}): </h3>
+</form:form></div></div>
+ <section class="content-header">
+<h1>La liste des eleves dans cette classe</h1></section>
+</br>
+<div class="box box-success">
+                <div class="box-header">
     <c:if test="${!empty P}">
     <table class="tg">
     <tr>
@@ -237,7 +253,7 @@
     </c:forEach>
     </table>
 </c:if>
-</div>
+</div></div></div>
       
       <!-- Control Sidebar -->      
       <aside class="control-sidebar control-sidebar-dark">                

@@ -14,7 +14,7 @@ public interface ParentService {
 	    public Parent  getParentById(int id);
 	    public void removeParent(int id);
 		public void updateParent(Parent p);
-	    public List<Profil> listProfil(int id);
+		public List<Profil> listGives(int id);
 		
-		public void addProfiltoParent(int parentId,int  profilId );
+		public void addProfilToParent(int parentId, int profilId);
 }

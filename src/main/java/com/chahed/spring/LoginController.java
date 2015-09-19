@@ -40,7 +40,7 @@ public class LoginController {
 	}
 
 
-	@RequestMapping(value="/login")
+	@RequestMapping(value="/login",method = RequestMethod.POST)
 	public ModelAndView getLoginForm(@ModelAttribute Users users,
 			@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout) {
@@ -59,7 +59,7 @@ public class LoginController {
 	public String getUserProfile() {
 		return "user";}
 	
-	@RequestMapping(value="/admin", method = RequestMethod.GET)
+	@RequestMapping(value="/admin")
 	public String admin(Model model, @ModelAttribute Users users) {
 		
 		model.addAttribute("name", users);

@@ -11,6 +11,7 @@ import com.chahed.spring.dao.EnseignantDAO;
 import com.chahed.spring.dao.ParentDAO;
 import com.chahed.spring.dao.ProfilDAO;
 import com.chahed.spring.model.Cours;
+import com.chahed.spring.model.Enseignant;
 import com.chahed.spring.model.Parent;
 import com.chahed.spring.model.Profil;
 
@@ -20,7 +21,9 @@ private ParentDAO parentDAO ;
 private ProfilDAO profilDAO;
 
 
-
+public void setProfilDAO(ProfilDAO profilDAO) {
+	this.profilDAO = profilDAO;
+}
 	
 	
 public void setParentDAO(ParentDAO parentDAO) {
@@ -34,12 +37,14 @@ public void setParentDAO(ParentDAO parentDAO) {
 	}
 
 	@Override
+	@Transactional
 	public List<Parent> listParent() {
 	return	this.parentDAO.listParent();
 
 	}
 
 	@Override
+	@Transactional
 	public Parent getParentById(int id) {
 		return this.parentDAO.getParentById(id);
 	}
@@ -51,19 +56,23 @@ public void setParentDAO(ParentDAO parentDAO) {
 	}
 
 	@Override
+	@Transactional
 	public void updateParent(Parent p) {
 		this.parentDAO.updateParent(p);
 	}
 	@Override
-	public List<Profil> listProfil(int id) {
-		return parentDAO.getProfils(id);
+	@Transactional
+	public List<Profil> listGives(int id) {
+		parentDAO.getGives(id).size();
+		return parentDAO.getGives(id);
 	}
 	
 	@Override
-	public void addProfiltoParent(int parentId, int profilId) {
-		Parent parent = parentDAO.getParentById(parentId);
+	@Transactional
+	public void addProfilToParent(int parentId, int profilId) {
+		Parent parent= parentDAO.getParentById(parentId);
 		Profil profil = profilDAO.getProfilById(profilId);
-		parent.getListProfil().add(profil);
+		parent.getGives().add(profil);
 		parentDAO.updateParent(parent);
 		
 	}
