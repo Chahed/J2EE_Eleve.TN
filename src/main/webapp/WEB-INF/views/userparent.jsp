@@ -8,9 +8,21 @@
 </head>
 <body>
 	<%@ include file="/include/header.jsp" %>
+		<div class="slider_bg"><!-- start slider -->
+	<div class="container">
+		<div id="da-slider" class="da-slider text-center">
+			
+			<div class="da-slide">
+				<h2>Student Tracker</h2>
+				<p>Espace pour les parents :<span class="hide_text">Student Tracker offre un espace parental pour la suivie des leurs enfants et consulter les remarques de leurs enseignants concernant chaque matière.</span></p>
+				<h3 class="da-link"><a href="single-page.html" class="fa-btn btn-1 btn-1e">Voirplus</a></h3>
+			</div>
 		
-		<h3>Bonjour monsieur le parent</h3>
-		<a href="http://localhost:8080/spring/remarque">Consulter les profils</a>
+	   </div>
+	</div>
+</div><!-- end slider -->
+		
+		
 		<c:url var="logoutUrl" value="j_spring_security_logout" />
 		<form action="${logoutUrl}" method="post">
 			<input type="submit" value="Log out" /> <input type="hidden"

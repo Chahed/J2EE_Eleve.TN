@@ -602,7 +602,7 @@ fc.divideDurationByDuration = divideDurationByDuration;
 fc.multiplyDuration = multiplyDuration;
 fc.durationHasTime = durationHasTime;
 
-var dayIDs = [ 'sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat' ];
+var dayIDs = [ 'mon', 'tue', 'wed', 'thu', 'fri', 'sat' ];
 var intervalUnits = [ 'year', 'month', 'week', 'day', 'hour', 'minute', 'second', 'millisecond' ];
 
 
@@ -11147,10 +11147,10 @@ fcViews.agenda = {
 	'class': AgendaView,
 	defaults: {
 		allDaySlot: true,
-		allDayText: 'all-day',
+		
 		slotDuration: '00:30:00',
-		minTime: '00:00:00',
-		maxTime: '24:00:00',
+		minTime: '08:00:00',
+		maxTime: '18:00:00',
 		slotEventOverlap: true // a bad name. confused with overlap/constraint system
 	}
 };

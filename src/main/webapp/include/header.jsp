@@ -34,7 +34,18 @@
 		       <li class="active"><a href="/spring/home">Acceuil</a></li>
 
 		        <li><a href="technology.html">Etablissement</a></li>
+		        <sec:authorize ifAnyGranted="ROLE_USER">
+		        <li><a href="/spring/remarque">Classes</a></li>
+		        <li><a href="/spring/emplois">Emplois du temps</a></li>
+		        </sec:authorize>
 		        
+		        <sec:authorize ifAnyGranted="ROLE_PARENT">
+		         <li><a href="/spring/listEnseignants">Enseignants</a></li>
+		         <li><a href="/spring/coursList">Cours</a></li>
+		        <li><a href="/spring/remarque">Classes</a></li>
+		        <li><a href="/spring/emplois">Emplois du temps</a></li>
+		        </sec:authorize>
+				
 		        
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
@@ -43,15 +54,26 @@
 		<div class=" collapse navbar-collapse" >
 			<ul class="nav  navbar-nav navbar-right">
 			<li class="dropdown">
+			<sec:authorize ifNotGranted="ROLE_USER,ROLE_PARENT"> 
         <a href="#" data-toggle="dropdown" class="dropdown-toggle">S'inscrire <b class="caret"></b></a>
         <ul class="dropdown-menu" class="item">
             <li><a href="/spring/inscEnseignant">Enseignant</a></li>
             <li><a href="/spring/inscP">Parent</a></li>
         </ul>
+        </sec:authorize>
     </li>
+    <sec:authorize ifNotGranted="ROLE_USER,ROLE_PARENT">  
 		<li><a href="/spring/login">Se connecter</a></li>
-		
-				
+		</sec:authorize>
+		<sec:authorize ifAnyGranted="ROLE_PARENT,ROLE_USER">
+		<li><c:url value="/j_spring_security_logout" var="logoutUrl" />
+             <a href="${logoutUrl}">Se déconnecter</a> </li>
+		</sec:authorize>
+
+
+
+    
+
 			</ul>	
 		</div>
 	</div>

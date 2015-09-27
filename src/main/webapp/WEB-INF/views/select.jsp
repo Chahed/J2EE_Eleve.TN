@@ -1,6 +1,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+ <%@ page session="false" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -66,7 +67,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="<%= request.getContextPath() %>/resources/dist/img/user.jpg" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs"></span>
+                  <span class="hidden-xs"> </span>
                 </a>
                 <ul class="dropdown-menu">
                   
@@ -85,9 +86,7 @@
                 </ul>
               </li>
               <!-- Control Sidebar Toggle Button -->
-              <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-              </li>
+             
             </ul>
           </div>
         </nav>
@@ -102,7 +101,7 @@
               <img src="<%= request.getContextPath() %>/resources/dist/img/user.jpg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>${name.username}</p>
+              <p> </p>
 
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -115,8 +114,8 @@
                 <i class="fa fa-dashboard"></i> <span>Ajouter un Utilisateur</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="enseignants"><i class="fa fa-circle-o"></i>Enseignant</a></li>
-                <li><a href="parent"><i class="fa fa-circle-o"></i>Parent</a></li>
+                <li><a href="enseignants"><i class="fa fa-circle-o"></i>Enseignant</a></li>
+                <li class="active"><a href="parent"><i class="fa fa-circle-o"></i>Parent</a></li>
               </ul>
             </li>
             <li>
@@ -130,7 +129,7 @@
             
             
            <li>
-              <a href="classes">
+              <a href="Calendar">
                 <i class="fa fa-calendar"></i> <span>Gérer Les Calendriers</span>
                 
               </a>
@@ -145,146 +144,22 @@
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-      
-        <!-- Main content -->
-        <section class="content">
-          <!-- Small boxes (Stat box) -->
-          <div class="row">
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-aqua">
-                <div class="inner">
-                  <h3>20</h3>
-                  <p>Classes</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-bag"></i>
-                </div>
-                <a href="#" class="small-box-footer">Voire plus <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-green">
-                <div class="inner">
-                  <h3>53<sup style="font-size: 20px"></sup></h3>
-                  <p>Enseignants</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-stats-bars"></i>
-                </div>
-                <a href="#" class="small-box-footer">Voire plus <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-yellow">
-                <div class="inner">
-                  <h3>253</h3>
-                  <p>Elèves</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-person-add"></i>
-                </div>
-                <a href="#" class="small-box-footer">Voire plus <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-red">
-                <div class="inner">
-                  <h3>65</h3>
-                  <p>Parents inscris</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-pie-graph"></i>
-                </div>
-                <a href="#" class="small-box-footer">Voire plus <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div><!-- ./col -->
-          </div><!-- /.row -->
-          <!-- Main row -->
-          <div class="row">
-            <!-- Left col -->
-           
-            <!-- right col (We are only adding the ID to make the widgets sortable)-->
-            <section class="col-lg-5 connectedSortable">
-
-   
-              <!-- Calendar -->
-              <div class="box box-solid bg-green-gradient">
+ <section class="content-header">
+<h1>Choisir la classe</h1></section>
+</br>
+<div class="box box-success">
                 <div class="box-header">
-                  <i class="fa fa-calendar"></i>
-                  <h3 class="box-title">Calendar</h3>
-                  <!-- tools box -->
-                  <div class="pull-right box-tools">
-                    <!-- button with a dropdown -->
-                    <div class="btn-group">
-                      <button class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></button>
-                      <ul class="dropdown-menu pull-right" role="menu">
-                        <li><a href="#">Add new event</a></li>
-                        <li><a href="#">Clear events</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">View calendar</a></li>
-                      </ul>
-                    </div>
-                    <button class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div><!-- /. tools -->
-                </div><!-- /.box-header -->
-                <div class="box-body no-padding">
-                  <!--The calendar -->
-                  <div id="calendar" style="width: 100%"></div>
-                </div><!-- /.box-body -->
-                <div class="box-footer text-black">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- Progress bars -->
-                      <div class="clearfix">
-                        
-                      </div>
-                      <div class="progress xs">
-                      
-                      </div>
-
-                      <div class="clearfix">
-                  
-                      </div>
-                      <div class="progress xs">
-                        
-                      </div>
-                    </div><!-- /.col -->
-                    <div class="col-sm-6">
-                      <div class="clearfix">
-                       
-                      </div>
-                      <div class="progress xs">
-                        
-                      </div>
-
-                      <div class="clearfix">
-                   
-                      </div>
-                      <div class="progress xs">
-                        
-                      </div>
-                    </div><!-- /.col -->
-                  </div><!-- /.row -->
-                </div>
-              </div><!-- /.box -->
-
-            </section><!-- right col -->
-          </div><!-- /.row (main row) -->
-
-        </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
-      <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Version</b> 2.0
-        </div>
-        <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
-      </footer>
+<ul class="todo-list">
+   <c:forEach items="${classes}" var="classe">
+        
+           <li><a href="http://localhost:8080/spring/calendar/${classe.id}"> ${classe.nomclasse}</a></li>
+            
+            
+     
+        
+    </c:forEach></ul></div></div>
+  
+ </div>
       
       <!-- Control Sidebar -->      
       <aside class="control-sidebar control-sidebar-dark">                
@@ -495,3 +370,4 @@
     <script src="<%= request.getContextPath() %>/resources/dist/js/demo.js" type="text/javascript"></script>
   </body>
 </html>
+

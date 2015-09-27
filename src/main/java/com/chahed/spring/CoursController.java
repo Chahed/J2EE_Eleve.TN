@@ -33,6 +33,13 @@ public class CoursController {
 	        model.addAttribute("listCours", this.coursService.listCours());
 	        return "cours";
 	    }
+	    @RequestMapping(value = "/coursList", method = RequestMethod.GET)
+	    public String list(Model model) {
+	        model.addAttribute("cours", new Cours());
+	        model.addAttribute("listCours", this.coursService.listCours());
+	        return "coursList";
+	    }
+	    
 	    @RequestMapping(value= "/cours/ajout", method = RequestMethod.POST)
 	    public String addCours(@ModelAttribute("cours") Cours c){
 	         

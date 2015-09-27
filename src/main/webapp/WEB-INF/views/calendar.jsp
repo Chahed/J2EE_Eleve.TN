@@ -1,3 +1,4 @@
+
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -41,7 +42,14 @@
 		-----------------------------------------------------------------*/
 
 		$('#calendar').fullCalendar({
-		
+			
+			slotDuration: '00:30:00',
+			columnFormat:'dddd',
+			header : false,
+			allDaySlot : false,
+			minTime : "08:00:00",
+			maxTime : "18:00:00",
+			hiddenDays: [0],
 			editable: true,
 			droppable: true, // this allows things to be dropped onto the calendar
 			drop: function() {
@@ -114,6 +122,7 @@
 </style>
 </head>
 <body>
+  
 	<div id='wrap'>
 
 		<div id='external-events'>
@@ -132,13 +141,10 @@
            
            </c:forEach>
 		
-			<p>
-				<input type='checkbox' id='drop-remove' />
-				<label for='drop-remove'>remove after drop</label>
-			</p>
+		
 		</div>
-
-		<div id='calendar'></div>
+     
+	 <div id='calendar'></div>
 
 		<div style='clear:both'></div>
 

@@ -10,10 +10,8 @@
 <%@ include file="/include/js.jsp" %>
 
 </head>
-<body>
+<body style="text-align: center">
 <%@ include file="/include/header.jsp" %>
-
-
 
 
 <h3>Veuillez Choisir la classe : </h3>

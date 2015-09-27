@@ -15,7 +15,7 @@ public class Classe {
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id ;
     @Column
-	private String nomclasse ;
+	public String nomclasse ;
 	
 	public Classe(int id) {
 		super();

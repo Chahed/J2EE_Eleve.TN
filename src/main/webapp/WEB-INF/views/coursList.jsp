@@ -11,25 +11,22 @@
 </head>
 <body >
 <%@ include file="/include/header.jsp" %>
-<c:if test="${!empty P}">
+
 <table id="restable">
 
 	  <thead>
 	  	<tr>
-	  	<th colspan='3'> La liste des élèves } </th>
+	  	<th colspan='1'> La liste des cours enseignés dans notre établissement </th>
 	  </tr>
 	  <tr>
-	    <th>Nom & Prénom</th>
-	    <th>Date naissance</th>
-	    <th>Plus</th>
+	    <th>Libellé</th>
+	   
 	  </tr>
 	</thead>
 	<tbody>
-	    <c:forEach items="${P}" var="person">
+	    <c:forEach items="${listCours}" var="c">
         <tr class="htmw">
-            <td>${person.nom}  ${person.prenom}</td>
-            <td>${person.dateNaissance}</td>
-            <td><a href="<c:url value='http://localhost:8080/spring/remarque/details/${person.id}' />" >Voir Profil</a></td>
+            <td>${c.libelle}</td>
             
         </tr>
     </c:forEach>
@@ -37,6 +34,6 @@
 	 
 	</tbody>
 	</table>
-	</c:if>
+	
 </body>
 </html>

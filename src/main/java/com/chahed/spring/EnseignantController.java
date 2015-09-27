@@ -62,6 +62,13 @@ public class EnseignantController {
         model.addAttribute("listCours", this.coursService.listCours());
         return "enseignant";
     }
+    @RequestMapping(value = "/listEnseignants", method = RequestMethod.GET)
+    public String listEnseig(Model model) {
+        model.addAttribute("enseignant", new Enseignant());
+        model.addAttribute("listenseignant", this.enseignantService.listEnseignants());
+        model.addAttribute("listCours", this.coursService.listCours());
+        return "enseignantList";
+    }
     
     
     //For add and update person both

@@ -5,7 +5,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style>
+#button{
+	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+	
+	width: 30%;
+	border: #fbfbfb solid 4px;
+	cursor:pointer;
+	background-color: #FF5454;
+	color:white;
+	font-size:14px;
+	padding-top:10px;
+	padding-bottom:10px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:500;
+}
+
+#button:hover{
+	background-color: rgba(0,0,0,0);
+	color: #FF5454;
+}
+	
+.submit:hover {
+	color: #FF5454;
+}
+</style>
 <title>Profil</title>
+<%@ include file="/include/csss.jsp" %>
 <%@ include file="/include/js.jsp" %>
 
 </head>
@@ -33,7 +62,22 @@
 				</div>
 			</div>
 		</div>
-		<a href="#"><i class="fa fa-edit"></i> Remarques</a>
+		
+		<a href="#"><i class="fa fa-plus"></i> Ajouter une  Remarque</a>
+		<div class="sub-nav" >
+			<div class="html chat">
+				
+				<div class="user user-dribble clearfix" >
+					<form:form action="http://localhost:8080/spring/remarque/ajout/${id}" method="post">
+					<span class="text-msg"><input type="textarea"  Name="a"  ></span>
+					<span><input type="submit"   value="Ajouter" id="button" /></span> 
+					</form:form>
+				</div>
+				
+			</div>
+		</div>
+		
+		<a href="#"><i class="fa fa-edit"></i>  Remarques</a>
 		<div class="sub-nav">
 			<div class="html chat">
 				<c:forEach items="${P}" var="rmq">
@@ -48,7 +92,6 @@
 		
 	</div>
 </div>
-
 
 </body>
 </html>
