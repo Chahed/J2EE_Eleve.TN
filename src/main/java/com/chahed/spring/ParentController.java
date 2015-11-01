@@ -51,7 +51,11 @@ public class ParentController {
         this.userRoleService = es;
     }
   
+	@RequestMapping(value = "/userparent", method = RequestMethod.GET)
+    public String Acceuil(Model model) {
     
+        return "userparent";
+    }
     @RequestMapping(value = "/parent", method = RequestMethod.GET)
     public String listParent(Model model) {
         model.addAttribute("parent", new Parent());
@@ -69,9 +73,9 @@ public class ParentController {
         if(result.hasErrors()) {
             return "redirect:/inscParent";
         }
-        String nom = e.getNom();
+        String login = e.getLogin();
         String mdp = e.getMotdepasse();
-        Users u = new Users(nom,mdp,true);
+        Users u = new Users(login,mdp,false);
         UserRole r = new UserRole(u,"ROLE_PARENT");
         this.parentService.addParent(e);
         this.userService.addUser(u);

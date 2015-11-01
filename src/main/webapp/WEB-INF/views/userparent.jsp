@@ -8,13 +8,13 @@
 </head>
 <body>
 	<%@ include file="/include/header.jsp" %>
-		<div class="slider_bg"><!-- start slider -->
+		<div class="slider_bg2"><!-- start slider -->
 	<div class="container">
 		<div id="da-slider" class="da-slider text-center">
 			
 			<div class="da-slide">
-				<h2>Student Tracker</h2>
-				<p>Espace pour les parents :<span class="hide_text">Student Tracker offre un espace parental pour la suivie des leurs enfants et consulter les remarques de leurs enseignants concernant chaque matière.</span></p>
+				<h2>Elève.Tn</h2>
+				<p>Espace pour les parents :<span class="hide_text">Elève.Tn offre un espace parental pour la suivie des leurs enfants et consulter les remarques de leurs enseignants concernant chaque matière.</span></p>
 				<h3 class="da-link"><a href="single-page.html" class="fa-btn btn-1 btn-1e">Voirplus</a></h3>
 			</div>
 		
@@ -29,6 +29,6 @@
 				name="${_csrf.parameterName}" value="${_csrf.token}" />
 		</form>
 
-
+ <%@ include file="/include/footer.jsp" %>
 </body>
 </html>

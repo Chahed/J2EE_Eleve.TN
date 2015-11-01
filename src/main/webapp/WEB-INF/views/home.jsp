@@ -104,7 +104,7 @@
             <div class="pull-left info">
               <p>${name.username}</p>
 
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+              <a href="#"><i class="fa fa-circle text-success"></i> En ligne</a>
             </div>
           </div>
           <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -112,7 +112,7 @@
             <li class="header">MAIN NAVIGATION</li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Ajouter un Utilisateur</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-user"></i> <span>Ajouter un Utilisateur</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li class="active"><a href="enseignants"><i class="fa fa-circle-o"></i>Enseignant</a></li>
@@ -427,7 +427,7 @@
 
               <div class="form-group">
                 <label class="control-sidebar-subheading">
-                  Show me as online
+                  Show me as En ligne
                   <input type="checkbox" class="pull-right" checked />
                 </label>                
               </div><!-- /.form-group -->

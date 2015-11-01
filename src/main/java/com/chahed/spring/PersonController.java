@@ -136,7 +136,15 @@ public class PersonController {
     }
     @RequestMapping(value="/remarque/details/{id}", method = RequestMethod.GET)
     public String rmqdétail(@PathVariable("id") int id, Model model){
-    	model.addAttribute("id", id);
+    	model.addAttribute("profil", this.profilService.getProfilById(id));
+    	 List<Remarque> p = this.remarqueService.ListRemarquebyEleve(id);
+    	 model.addAttribute("P", p );
+        return "RemarqueEdit";
+       
+    }
+    @RequestMapping(value="/remarque/parent/{id}", method = RequestMethod.GET)
+    public String rmqparent(@PathVariable("id") int id, Model model){
+    	model.addAttribute("profil", this.profilService.getProfilById(id));
     	 List<Remarque> p = this.remarqueService.ListRemarquebyEleve(id);
     	 model.addAttribute("P", p );
         return "Remarque_by_eleve";

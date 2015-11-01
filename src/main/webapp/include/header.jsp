@@ -2,7 +2,8 @@
 <div class="container">
 	<div class="row header">
 		<div class="logo navbar-left">
-			<h1><a href="index.html">Student Tracker </a></h1>
+			<h1><a href="index.html">Elève.TN </a></h1> 
+		
 		</div>	
 		<div class="h_search navbar-right">
 			<form>
@@ -31,15 +32,20 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
+		      <sec:authorize ifNotGranted="ROLE_USER,ROLE_PARENT,ROLE_ADMIN">  
 		       <li class="active"><a href="/spring/home">Acceuil</a></li>
-
 		        <li><a href="technology.html">Etablissement</a></li>
+		           </sec:authorize>
 		        <sec:authorize ifAnyGranted="ROLE_USER">
+		          <li class="active"><a href="/spring/user">Acceuil</a></li>
+		            <li><a href="technology.html">Etablissement</a></li>
 		        <li><a href="/spring/remarque">Classes</a></li>
 		        <li><a href="/spring/emplois">Emplois du temps</a></li>
 		        </sec:authorize>
 		        
 		        <sec:authorize ifAnyGranted="ROLE_PARENT">
+		         <li class="active"><a href="/spring/userparent">Acceuil</a></li>
+		           <li><a href="technology.html">Etablissement</a></li>
 		         <li><a href="/spring/listEnseignants">Enseignants</a></li>
 		         <li><a href="/spring/coursList">Cours</a></li>
 		        <li><a href="/spring/remarque">Classes</a></li>

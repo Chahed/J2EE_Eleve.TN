@@ -438,12 +438,15 @@ body{
   width: 500px;
 }
 
-h1 {
-  font-size: 32px;
-  font-size: 2rem;
-  text-align: center;
-}
 
+h1
+{
+background: url("../images/pzzz.png") left;
+padding-left: 0px;
+line-height: 70px;
+
+
+}
 .list {
 	margin-left: auto;
     margin-right: auto;
@@ -655,8 +658,19 @@ body {
 	background: #FF5454;
 }
 /* start slider */
+.iconeSt{
+	background: url('../images/st.jpg') no-repeat;
+	width: 30px;
+	height: 30px;
+}
 .slider_bg{
+	
 	background: url('../images/slider_bg.jpg') no-repeat;
+	background-size: 100%;
+}
+.slider_bg2{
+	
+	background: url('../images/Kids.png') no-repeat;
 	background-size: 100%;
 }
 .slider{

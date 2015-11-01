@@ -103,15 +103,15 @@
             <div class="pull-left info">
               <p> </p>
 
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+              <a href="#"><i class="fa fa-circle text-success"></i> En ligne</a>
             </div>
           </div>
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-            <li class="header">MAIN NAVIGATION</li>
+            <li class="header">NAVIGATION</li>
             <li class="active treeview">
               <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Ajouter un Utilisateur</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-user"></i> <span>Ajouter un Utilisateur</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li><a href="enseignants"><i class="fa fa-circle-o"></i>Enseignant</a></li>
@@ -144,10 +144,8 @@
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-  <section class="content-header">
-<h1>Ajouter Parent</h1>
-</section>
-</br>
+  
+
 <style type="text/css">
         .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
         .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
@@ -156,105 +154,7 @@
         .error {
         color: #ff0000; }
     </style>
- <div class="box box-info">
-      <div class="box-header">
-<c:url var="addAction" value="/parent/ajout" ></c:url>
- 
-<form:form action="${addAction}" commandName="parent">
-    <table>
-    <tr>
-        <td>
-            <form:label path="id">
-                <spring:message text="ID"/>
-            </form:label>
-        </td>
-        <td>
-            <form:input path="id" readonly="true" size="8"  disabled="true" class="form-control"/>
-            <form:hidden path="id" />
-      
-      
-        </td> 
-    </tr>
-   
-    <tr>
-        <td>
-            <form:label path="nom">
-                <spring:message text="Nom"/>
-            </form:label>
-        </td>
-        <td>
-            <form:input path="nom" class="form-control"/>
-        </td> 
-         <td><form:errors path="nom" cssclass="error"/></td>
-    </tr>
-    <tr>
-        <td>
-            <form:label path="prenom">
-                <spring:message text="Prenom"/>
-            </form:label>
-        </td>
-        <td>
-            <form:input path="prenom" class="form-control" />
-        </td>
-         <td><form:errors path="prenom" cssclass="error"  text="erooor"/></td>
-    </tr>
-            <tr>
-        <td>
-            <form:label path="email">
-                <spring:message text="Email"/>
-            </form:label>
-        </td>
-        <td>
-            <form:input path="email" class="form-control" />
-        </td> 
-    </tr>
-           
-        <tr>
-        <td>
-            <form:label path="login">
-                <spring:message text="Login"/>
-                
-            </form:label>
-        </td>
-        <td>
-            <form:input path="login" class="form-control"/>
-        </td> 
-         <td><form:errors path="login" cssclass="error"/></td>
-    </tr>
 
-        <tr>
-        <td>
-            <form:label path="motdepasse">
-                <spring:message text="Mot de passe"/>
-            </form:label>
-        </td>
-        <td>
-            <form:input path="motdepasse" class="form-control" />
-        </td> 
-    </tr>
-            <tr>
-        <td>
-            <form:label path="tel">
-                <spring:message text="Tel"/>
-            </form:label>
-        </td>
-        <td>
-            <form:input path="tel" class="form-control"/>
-        </td> 
-    </tr>
-    
-    <td colspan="2">
-            <c:if test="${!empty parent.nom}">
-                <input type="submit" class="btn btn-default pull-right"
-                    value="<spring:message text="Modifier"/>" />
-            </c:if>
-            <c:if test="${empty parent.nom}">
-                <input type="submit" class="btn btn-default pull-right"
-                    value="<spring:message text="Ajouter"/>" />
-            </c:if>
-        </td>
-</table>
-</form:form></div></div>
  <section class="content-header">
 <h1>La Liste des parents</h1></section>
 </br>
@@ -263,7 +163,6 @@
 <c:if  test="${!empty listparent}">
 <table class="tg">
 <tr>
-       <th width="120">Id</th>
         <th width="120">Nom</th>
         <th width="120">Prenom</th>
         <th width="120">Email</th>
@@ -278,16 +177,16 @@
 </tr>
 <c:forEach items="${listparent}" var="parent">
     <tr>
-         <td >${parent.id}</td>
          <td >${parent.nom}</td>
         <td >${parent.prenom}</td>
         <td >${parent.email}</td>
         <td>${parent.login}</td>
         <td>${parent.motdepasse}</td>
         <td>${parent.tel}</td>
-  <td><a href="<c:url value='/modifierParent/${parent.id}' />" >Modifier</a></td>
+        <td><a href="parentprofil/classe/${parent.id}"><spring:message text="Enfant"/></a></td>
+        <td><a href="confirm/${parent.id}"><i class="fa fa-check"></i>Confirmer</td>
   <td><a href="<c:url value='/suppParent/${parent.id}' />" >Supprimer</a></td>
-  <td><a href="parentprofil/classe/${parent.id}"><spring:message text="Enfant"/></a></td>
+
     </tr>
 </c:forEach>
 </table>

@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.chahed.spring.model.UserRole;
 import com.chahed.spring.model.Users;
 
 public class UserDAOImpl implements UserDAO{
@@ -59,4 +60,5 @@ public class UserDAOImpl implements UserDAO{
 		session.close();
 	}
 
+	
 }

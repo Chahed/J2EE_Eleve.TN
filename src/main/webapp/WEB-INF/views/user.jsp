@@ -9,13 +9,13 @@
 
 <body>
 	<%@ include file="/include/header.jsp" %>
-		<div class="slider_bg"><!-- start slider -->
+		<div class="slider_bg2"><!-- start slider -->
 	<div class="container">
 		<div id="da-slider" class="da-slider text-center">
 			
 			<div class="da-slide">
-				<h2>Student Tracker</h2>
-				<p>Espace pour les enseignants:<span class="hide_text">Student Tracker offre un espace pour contribuer des remarques aux élèves  et ausii consulater les emplois du temps de chaque classe </span></p>
+				<h2>Elève.Tn</h2>
+				<p>Espace pour les enseignants:<span class="hide_text">Elève.Tn offre un espace pour contribuer des remarques aux élèves  et ausii consulater les emplois du temps de chaque classe </span></p>
 				<h3 class="da-link"><a href="single-page.html" class="fa-btn btn-1 btn-1e">Voir plus</a></h3>
 			</div>
 			
@@ -23,7 +23,7 @@
 	   </div>
 	</div>
 </div><!-- end slider -->
-		
+ <%@ include file="/include/footer.jsp" %>		
 
 </body>
 </html>

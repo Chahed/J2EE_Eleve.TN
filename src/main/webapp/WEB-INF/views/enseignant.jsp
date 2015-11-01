@@ -103,15 +103,15 @@
             <div class="pull-left info">
               <p> </p>
 
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+              <a href="#"><i class="fa fa-circle text-success"></i> En ligne</a>
             </div>
           </div>
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-            <li class="header">MAIN NAVIGATION</li>
+            <li class="header">NAVIGATION</li>
             <li class="active treeview">
               <a href="#">
-                <i class="fa fa-dashboard" class="active"></i> <span>Ajouter un Utilisateur</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-user" class="active"></i> <span>Ajouter un Utilisateur</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li class="active"><a href="enseignants"><i class="fa fa-circle-o"></i>Enseignant</a></li>
@@ -144,9 +144,7 @@
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-      <section class="content-header">
-      <h1>Ajouter un enseignant</h1>
-      </section>
+      
       <style type="text/css">
         .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
         .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
@@ -156,114 +154,7 @@
         color: #ff0000; }
     </style>
       </br>
-      <div class="box box-info">
-      <div class="box-header">
-     
-      
 
-<c:url var="addAction" value="/enseignant/ajout" ></c:url>
-
-<form:form action="${addAction}" commandName="enseignant" >
-    <table>
-    <tr>
-        <td>
-            <form:label path="id" >
-                <spring:message text="ID"/>
-            </form:label>
-        </td>
-        <td>
-            <form:input path="id" readonly="true" size="8"  disabled="true" class="form-control"/>
-            <form:hidden path="id" />
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            <form:label path="nom" >
-                <spring:message text="Nom"/>
-            </form:label>
-        </td>
-        <td>
-            <form:input path="nom" class="form-control" />
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <form:label path="prenom">
-                <spring:message text="Prenom"/>
-            </form:label>
-        </td>
-        <td>
-            <form:input path="prenom" class="form-control" />
-        </td>
-    </tr>
-            <tr>
-        <td>
-            <form:label path="email">
-                <spring:message text="Email"/>
-            </form:label>
-        </td>
-        <td>
-            <form:input path="email" class="form-control" />
-        </td>
-    </tr>
-
-        <tr>
-        <td>
-            <form:label path="login">
-                <spring:message text="Login"/>
-            </form:label>
-        </td>
-        <td>
-            <form:input path="login" class="form-control" />
-        </td>
-    </tr>
-
-        <tr>
-        <td>
-            <form:label path="motdepasse">
-                <spring:message text="Mot de passe"/>
-            </form:label>
-        </td>
-        <td>
-            <form:input path="motdepasse" class="form-control"/>
-        </td>
-    </tr>
-            <tr>
-        <td>
-            <form:label path="tel">
-                <spring:message text="Tel"/>
-            </form:label>
-        </td>
-        <td>
-            <form:input path="tel" class="form-control"/>
-        </td>
-    </tr>
-
-     <tr>
-        <td>
-            <form:label path="specialite">
-                <spring:message text="Specialite"/>
-            </form:label>
-        </td>
-        <td>
-            <form:input path="specialite" class="form-control" />
-        </td>
-    </tr>
-    
-    <td colspan="2">
-            <c:if test="${!empty enseignant.nom}">
-                <input type="submit"  class="btn btn-default pull-right"
-                    value="<spring:message text="Modifier"/>" />
-            </c:if>
-            <c:if test="${empty enseignant.nom}">
-                <input type="submit"  class="btn btn-default pull-right"
-                    value="<spring:message text="Ajouter"/>" />
-            </c:if>
-        </td>
-</table>
-</form:form>
-</div></div>
 <section class="content-header">
 <h1>La liste des enseignants</h1></section>
 </br>
@@ -276,13 +167,14 @@
         <th width="120">Nom</th>
         <th width="120">Prenom</th>
         <th width="120">Email</th>
-         <th width="120">Login</th>
-          <th width="120">Mot de passe</th>
-           <th width="120">Telephone</th>
+        <th width="120">Login</th>
+        <th width="120">Mot de passe</th>
+        <th width="120">Telephone</th>
         <th width="120">Specialite</th>
-
-    <th width="120">&nbsp;</th>
-    <th width="120">&nbsp;</th>
+  		<th width="120">Confirmation</th>
+   		<th width="120">&nbsp;</th>
+    	<th width="120">&nbsp;</th>
+        
 </tr>
 <c:forEach items="${listenseignant}" var="enseignant">
     <tr>
@@ -293,9 +185,12 @@
         <td>${enseignant.motdepasse}</td>
         <td>${enseignant.tel}</td>
         <td>${enseignant.specialite}</td>
-
+<%--         <c:if test="${enabled}=='0'"> --%>
+        <td><a href=""><i class="fa fa-check"></i>Confirmer</td>
+         <td><a href="enseignantcours/${enseignant.id}"><spring:message text="Cours"/></a></td>
         <td><a href="delete/${enseignant.id}"><spring:message text="Supprimer"/></a></td>
-        <td><a href="enseignantcours/${enseignant.id}"><spring:message text="Cours"/></a></td>
+       
+        
     </tr>
 </c:forEach>
 </table>
